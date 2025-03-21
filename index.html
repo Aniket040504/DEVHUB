@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevHub - GitHub Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="github-icon">
+                <i class="fab fa-github"></i>
+            </div>
+            <h1 class="title">⭐️ DevHub - GitHub Explorer</h1>
+        </div>
+
+        <div class="toggle-container">
+            <label class="toggle">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+            <p id="mode-label">Light Mode</p>
+        </div>
+
+        <div class="search-box">
+            <div class="input-wrapper">
+                <i class="fas fa-user search-icon"></i>
+                <input type="text" id="username" placeholder="Enter GitHub username">
+            </div>
+            <button onclick="getUser()"><i class="fas fa-search"></i> Search</button>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching GitHub data...</p>
+        </div>
+
+        <div id="profile" class="hidden">
+            <img id="avatar" src="" alt="Avatar">
+            <h2 id="name"></h2>
+            <p id="bio"></p>
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <p><strong>Followers:</strong> <span id="followers"></span></p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-user-plus"></i>
+                    <p><strong>Following:</strong> <span id="following"></span></p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-code-branch"></i>
+                    <p><strong>Repos:</strong> <span id="repos"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="repo-section">
+            <h3 class="repo-title hidden"><i class="fas fa-folder"></i> Repositories</h3>
+            <ul id="repoList"></ul>
+            
+        </div>
+    </div>
+    <div class="pattern-overlay"></div>
+    <script src="script.js"></script>
+</body>
+</html>
